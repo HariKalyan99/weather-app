@@ -1400,23 +1400,17 @@ function App(){
   
 
   useEffect(() => {
-    if(getLocationData){
-      findFlag(getLocationData.country)
-    }else{
-      findFlag("")
-    } 
-
-  })
-
-
-  const findFlag = (name) => {
-    const countryFlag = flagData.find(item => item.country === name);
-    const code = countryFlag.code.toUpperCase();
-
-    if(countryFlag){
+    if(getLocationData.country){
+      const countryFlag = flagData.find(item => item.country === getLocationData.country);
+      const code = countryFlag.code.toUpperCase();
+      if(code){
       setDisplayFlag(`https://flagsapi.com/${code}/flat/64.png`);
     }
-  }
+    }else{
+      setDisplayFlag("")
+    } 
+
+  }, [getLocationData])
 
   return (
     <>
@@ -1443,7 +1437,7 @@ function App(){
       </Box>) : 
        getLocationData && getApi && <Box>
         <h1 style={{textAlign: "center", color: "#fff"}}>{getLocationData.name}, {getLocationData.country}</h1> 
-        <BasicCard location={getLocationData} current={getCurrentData} foreCast={getForecastDataHours} forecastAstro={getForecastData} countryName={displayFlag} />
+        <BasicCard  location={getLocationData} current={getCurrentData} foreCast={getForecastDataHours} forecastAstro={getForecastData} countryName={displayFlag} />
        </Box> }
 
       {!isLoading && flag && <h1 style={{textAlign: "center", display: "flex", height: "30vh", alignItems: "center", color: "white", fontSize: "3rem"}}>{noMatch}</h1>}
