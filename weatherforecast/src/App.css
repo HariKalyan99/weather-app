@@ -1,0 +1,70 @@
+.appSearch {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40vh;
+  
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+.wrapper {
+  display: flex;
+  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.wrapper-item {
+  font-family: sans-serif;
+  
+  border-radius: 8px;
+  color: white;
+
+  margin: 2rem 1rem;
+}
+
+
+.grid-con {
+  display: flex;
+}
+
+@media (max-width: 900px){
+  .grid-con {
+    display: flex;
+    width: 60vh;
+    
+  }
+}
+
+
+@media (max-width: 300px){
+  .grid-con {
+    display: flex;
+    width: 40vh;
+    
+  }
+}
+
+@media (max-width: 500px){
+  .grid-con {
+    display: flex;
+    width: 50vh;
+    
+  }
+}
+
