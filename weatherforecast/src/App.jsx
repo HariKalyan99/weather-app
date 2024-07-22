@@ -26,8 +26,7 @@ function App(){
     setIsLoading(true);
     try {
       if(text.length > 0){
-        const fetchApi = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=d6f2c0c291bc416f9aa175315242207=${text}&days=1&aqi=yes&alerts=yes`);
-        
+        const fetchApi = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=8ed60fb5871c4d04b17182001242207&q=London&days=1&aqi=yes&alerts=yes`);
         if(fetchApi.status === 200){
         const {data} = fetchApi;
         const {current, forecast, location} = data;
