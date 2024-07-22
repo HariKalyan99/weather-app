@@ -1,7 +1,6 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import axios from "axios";
-import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -27,7 +26,7 @@ function App(){
     setIsLoading(true);
     try {
       if(text.length > 0){
-        const fetchApi = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=a3b0fdda2f5540b2a46111734240304&q=${text}&days=1&aqi=yes&alerts=yes`);
+        const fetchApi = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=d6f2c0c291bc416f9aa175315242207=${text}&days=1&aqi=yes&alerts=yes`);
         
         if(fetchApi.status === 200){
         const {data} = fetchApi;
